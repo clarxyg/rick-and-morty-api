@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ICharacter } from '@/types/ICharacter';
+import { ICharacter } from '@/interfaces/ICharacter';
 
 const api = axios.create({
   baseURL: 'https://rickandmortyapi.com/api',

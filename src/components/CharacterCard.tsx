@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { ICharacter } from "@/types/ICharacter";
+import { ICharacter } from "@/interfaces/ICharacter";
 import { getStatusColor } from "@/utils/getStatusColor";
 
 interface CharacterCardProps {

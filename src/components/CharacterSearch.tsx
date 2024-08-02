@@ -1,13 +1,23 @@
-"use-client"
-import React, { useState } from 'react';
+"use-client";
+import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
 import { useCharacterContext } from '@/context/CharacterContext';
 
 export function CharacterSearch() {
-  const [name, setName] = useState('');
+  const [name, setName] = useState<string>('');
   const { searchCharacters } = useCharacterContext();
 
   function handleSearch() {
     searchCharacters(name);
+  }
+
+  function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  }
+
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    setName(event.target.value);
   }
 
   return (
@@ -15,7 +25,8 @@ export function CharacterSearch() {
       <input
         type="text"
         value={name}
-        onChange={(e) => setName(e.target.value)}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
         className="border p-2 rounded-l"
         placeholder="Search characters"
       />
@@ -25,4 +36,3 @@ export function CharacterSearch() {
     </div>
   );
 }
-

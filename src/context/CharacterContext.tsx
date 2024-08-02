@@ -1,6 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { ICharacter } from '@/types/ICharacter';
+import { ICharacter } from '@/interfaces/ICharacter';
 import { CharacterAPI } from '@/services/getCharacter';
 
 interface CharacterContextProps {
