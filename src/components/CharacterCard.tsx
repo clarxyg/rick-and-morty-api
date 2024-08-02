@@ -1,15 +1,14 @@
 "use client";
-
 import React from "react";
-import { Character } from "@/types/ICharacter";
 import Image from "next/image";
+import { ICharacter } from "@/types/ICharacter";
 import { getStatusColor } from "@/utils/getStatusColor";
 
 interface CharacterCardProps {
-  character: Character;
+  character: ICharacter;
 }
 
-function CharacterCard({ character }: CharacterCardProps) {
+export function CharacterCard({ character }: CharacterCardProps) {
   return (
     <div className="flex items-center justify-center flex-col relative p-4">
       <div className="flex items-center justify-center flex-col w-full p-6 hover:scale-95 transition-transform duration-200 rounded-xl bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg border border-white border-opacity-20">
@@ -26,4 +25,3 @@ function CharacterCard({ character }: CharacterCardProps) {
   );
 }
 
-export default CharacterCard;

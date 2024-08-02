@@ -1,11 +1,10 @@
 "use client";
-
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { Character } from '@/types/ICharacter';
-import { CharacterAPI } from '@/services/api';
+import { ICharacter } from '@/types/ICharacter';
+import { CharacterAPI } from '@/services/getCharacter';
 
 interface CharacterContextProps {
-  characters: Character[];
+  characters: ICharacter[];
   isLoading: boolean;
   searchCharacters: (name: string) => Promise<void>;
 }
@@ -13,7 +12,7 @@ interface CharacterContextProps {
 const CharacterContext = createContext<CharacterContextProps | undefined>(undefined);
 
 export function CharacterProvider({ children, api }: { children: ReactNode, api: CharacterAPI }) {
-  const [characters, setCharacters] = useState<Character[]>([]);
+  const [characters, setCharacters] = useState<ICharacter[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   async function searchCharacters(name: string) {

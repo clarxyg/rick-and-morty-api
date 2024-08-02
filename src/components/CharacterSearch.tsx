@@ -1,8 +1,8 @@
-'use client'
+"use-client"
 import React, { useState } from 'react';
 import { useCharacterContext } from '@/context/CharacterContext';
 
-function CharacterSearch() {
+export function CharacterSearch() {
   const [name, setName] = useState('');
   const { searchCharacters } = useCharacterContext();
 
@@ -26,4 +26,3 @@ function CharacterSearch() {
   );
 }
 
-export default CharacterSearch;
